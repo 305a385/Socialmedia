@@ -1,0 +1,14 @@
+body {
+	background-color: #000011;
+	color: #EEEEFE;
+}
+
+* {
+	font-family: sans-serif;
+}
+
+input, textarea {
+	background-color: #000022;
+	color: #EEEEFE;
+	border-radius: 5px;
+}
