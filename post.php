@@ -6,7 +6,7 @@
 	?>
 	<body>
 		<?php
-			$dbFile = fopen("feed.json", "a") or die("Unable to open database!");
+			$feedFile = fopen("feed.json", "a") or die("Unable to open database!");
 		
 			$post = new stdClass();
 
@@ -16,8 +16,8 @@
 
 			$postJson = json_encode($post);
 
-			fwrite($dbFile, "$postJson\n");
-			fclose($dbFile);
+			fwrite($feedFile, "$postJson\n");
+			fclose($feedFile);
 
 			echo('Success');
 		?>

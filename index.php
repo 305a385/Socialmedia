@@ -10,6 +10,6 @@
 		<pre>Title:		<input type="text" name="title"> </pre>
 		<pre>Body:		<textarea name="body" cols='40' rows='5'></textarea> </pre>
 		<input type="submit" value='Submit'>
-		</form>
+	</form>
 	</body>
 </html
