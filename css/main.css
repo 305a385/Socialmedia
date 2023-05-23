@@ -12,3 +12,10 @@ input, textarea {
 	color: #EEEEFE;
 	border-radius: 5px;
 }
+
+.post {
+	border-color: #B0B0B0;
+	border-radius: 5px;
+	border-width: 3px;
+	border-style: solid;
+}

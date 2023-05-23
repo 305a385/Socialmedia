@@ -6,21 +6,22 @@
 	?>
 	<body>
 		<?php
-			$feedFile = fopen("feed.json", "a") or die("Unable to open database!");
-		
 			$post = new stdClass();
 
 			$post->title = htmlspecialchars($_POST["title"]);
 			$post->body = htmlspecialchars($_POST["body"]);
 			$post->author = htmlspecialchars($_POST["author"]);
+			require 'vendor/autoload.php'; // include Composer's autoloader
+			
+			$client = new MongoDB\Client("mongodb://localhost:27017");
+			$collection = $client->socialmedia->posts;
+			
+			$result = $collection->insertOne( $post );
 
-			$postJson = json_encode($post);
-
-			fwrite($feedFile, "$postJson\n");
-			fclose($feedFile);
-
-			echo('Success');
+			$prev = $_GET['back'];
+			// redirect to previous page		
+			header("Location: $prev");
 		?>
 
 	</body>
-</html
+</html>
